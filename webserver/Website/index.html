@@ -1,0 +1,26 @@
+<html>
+   <head>
+	
+<script>
+const socket = new WebSocket('ws://localhost:4444');
+
+socket.addEventListener('open', function (event) {
+    //socket.send('Hello Server!');
+});
+
+socket.addEventListener('message', function (event) {
+    console.log('Message from server ', event.data);
+	document.getElementById("abc").innerHTML = event.data;
+});
+
+</script>
+		
+   </head>
+   <body>
+   
+      <div id="abc">
+         <h1 color="#FF00AA">Data:</h1>
+      </div>
+      
+   </body>
+</html>
